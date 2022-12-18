@@ -1,0 +1,39 @@
+{% extends 'basenotice.html' %}
+{% block body %}
+    <center>
+    <h1>Enter Course Name</h1>
+    <table class="table table-hover">
+      <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Send" />
+      </form>
+    </table>
+</center>
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">Course</th>
+            <th scope="col">Name</th>
+            <th scope="col">Father's Name</th>
+            <th scope="col">DOB</th>
+            <th scope="col">Mobile</th>
+            <th scope="col">Image</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for item in items %}
+        <tr>
+            <th>{{ item.course }}</th>
+            <th>{{ item.name }}</th>
+            <th>{{ item.father_name }}</th>
+            <th>{{ item.dob }}</th>
+            <th>{{ item.mobile }}</th>
+            <th><img src= "{{ item.image.url }}" class="img-responsive" style="width: 50px; height: 50px; float: left; margin-right: 10px;" /></th>
+            <th></th>
+        {% endfor %}
+        </tr>
+        </tbody>
+    </table>
+{% endblock %}

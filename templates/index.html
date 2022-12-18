@@ -1,0 +1,262 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+
+  <!--Intro Section-->
+  <section id="intro">
+
+    <div class="intro-content"  style="background-image: url({% static 'img/wel.jpg' %})">
+      <h2 style="color:cyan">Welcome To<br>College <span style="color:white ">Management</span> System</h2>
+    </div>
+
+  </section><!-- #intro -->
+
+  <main id="main">
+
+    <!--Our Gallery Section-->
+    <section id="portfolio" class="wow fadeInUp">
+      <div class="container">
+        <div class="section-header">
+          <h2>Photo Gallery</h2>
+        </div>
+      </div>
+
+      <div class="container-fluid">
+        <div class="row no-gutters">
+
+          <div class="col-lg-3 col-md-4">
+            <div class="portfolio-item wow fadeInUp">
+              <a href="{% static 'img/portfolio/1.jpg' %}" class="portfolio-popup">
+                <img src="{% static 'img/portfolio/1.jpg' %}" alt="">
+                <div class="portfolio-overlay">
+                  <div class="portfolio-info"><h2 class="wow fadeInUp">College</h2></div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="portfolio-item wow fadeInUp">
+              <a href="{% static 'img/portfolio/2.jpg' %}" class="portfolio-popup">
+                <img src="{% static 'img/portfolio/2.jpg' %}" alt="">
+                <div class="portfolio-overlay">
+                  <div class="portfolio-info"><h2 class="wow fadeInUp">Teacher</h2></div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="portfolio-item wow fadeInUp">
+              <a href="{% static 'img/portfolio/3.jpg' %}" class="portfolio-popup">
+                <img src="{% static 'img/portfolio/3.jpg' %}" alt="">
+                <div class="portfolio-overlay">
+                  <div class="portfolio-info"><h2 class="wow fadeInUp">Student</h2></div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4">
+            <div class="portfolio-item wow fadeInUp">
+              <a href="{% static 'img/portfolio/4.jpg' %}" class="portfolio-popup">
+                <img src="{% static 'img/portfolio/4.jpg' %}" alt="">
+                <div class="portfolio-overlay">
+                  <div class="portfolio-info"><h2 class="wow fadeInUp">Computer Lab</h2></div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="portfolio-item wow fadeInUp">
+              <a href="{% static 'img/portfolio/5.jpg' %}" class="portfolio-popup">
+                <img src="{% static 'img/portfolio/5.jpg' %}" alt="">
+                <div class="portfolio-overlay">
+                  <div class="portfolio-info"><h2 class="wow fadeInUp">Library</h2></div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="portfolio-item wow fadeInUp">
+              <a href="{% static 'img/portfolio/6.jpg' %}" class="portfolio-popup">
+                <img src="{% static 'img/portfolio/6.jpg' %}" alt="">
+                <div class="portfolio-overlay">
+                  <div class="portfolio-info"><h2 class="wow fadeInUp">Lab</h2></div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="portfolio-item wow fadeInUp">
+              <a href="{% static 'img/portfolio/7.jpg' %}" class="portfolio-popup">
+                <img src="{% static 'img/portfolio/7.jpg' %}" alt="">
+                <div class="portfolio-overlay">
+                  <div class="portfolio-info"><h2 class="wow fadeInUp">Exam</h2></div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="portfolio-item wow fadeInUp">
+              <a href="{% static 'img/portfolio/8.jpg' %}" class="portfolio-popup">
+                <img src="{% static 'img/portfolio/8.jpg' %}" alt="">
+                <div class="portfolio-overlay">
+                  <div class="portfolio-info"><h2 class="wow fadeInUp">Complete</h2></div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- #portfolio -->
+
+
+
+
+      <!--==========================
+      About Section
+    ============================-->
+    <section id="about" class="wow fadeInUp">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 about-img">
+            <img src="{% static 'img/about.jpg' %}" alt="">
+          </div>
+
+          <div class="col-lg-6 content">
+            <h2>About College Management System</h2>
+            <h3>College Management System is Eco-friendly avoid paper based data and use for college and education department. This is a small base project example which Focus on-</h3>
+
+            <ul>
+              <li><i class="ion-android-checkmark-circle"></i> Modern Web Technologies.</li>
+              <li><i class="ion-android-checkmark-circle"></i> Manual work reduces considerably.</li>
+              <li><i class="ion-android-checkmark-circle"></i> Data stays secure.</li>
+            </ul>
+
+          </div>
+        </div>
+
+      </div>
+    </section><!-- #about -->
+
+    <!--==========================
+      Services Section
+    ============================-->
+    <section id="services">
+      <div class="container">
+        <div class="section-header">
+          <h2>Department</h2>
+          <p>College can manage activities like student attendance, important notice distribution, sms and email support. Project is designed in order to minimize the complexity faced by colleges. College management system based on browser so its runs in all of operating system and Mobile devices. With this reliable and secure solution the college now can achieve the goal of becoming the paperless organization.</p>
+        </div>
+
+        <div class="row">
+        {% for item in items %}
+          <div class="col-lg-6">
+            <div class="box wow fadeInLeft">
+                    <h4 class="title"><a href="{% url 'course' item.pk%}">{{ item.name }}</a></h4>
+              <p class="description">{{ item.description }}</p>
+            </div>
+          </div>
+        {% endfor %}
+
+        </div>
+
+      </div>
+    </section><!-- #services -->
+
+
+    <!--==========================
+      Contact Section
+    ============================-->
+    <section id="contact" class="wow fadeInUp">
+      <div class="container">
+        <div class="section-header">
+          <h2>Contact Us</h2>
+          <p>Have any queries? We’re always here to help!</p><br>
+            <p>We've compiled a list of useful material that may help answer your query.</p>
+        </div>
+
+        <div class="row contact-info">
+
+          <div class="col-md-4">
+            <div class="contact-address">
+              <i class="ion-ios-location-outline"></i>
+              <h3>Address</h3>
+              <address>Bilaspur, Chhattisgarh, CG</address>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="contact-phone">
+              <i class="ion-ios-telephone-outline"></i>
+              <h3>Phone Number</h3>
+              <p><a href="tel:+917000103362">+91 7000 1033 62</a></p>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="contact-email">
+              <i class="ion-ios-email-outline"></i>
+              <h3>Email</h3>
+              <p><a href="mailto:info@example.com">taosif@gmail.com</a></p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="container mb-4">
+        <iframe src="https://maps.google.com/maps?q=Guru%20Ghasidas%20University&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="380" frameborder="0" style="border:0" allowfullscreen></iframe>
+      </div>
+
+      <div class="container">
+        <div class="form">
+          <div id="sendmessage">Your message has been sent. Thank you!</div>
+          <div id="errormessage"></div>
+          <form action="" method="post" role="form" class="contactForm">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <div class="validation"></div>
+              </div>
+              <div class="form-group col-md-6">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                <div class="validation"></div>
+              </div>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+              <div class="validation"></div>
+            </div>
+            <div class="form-group">
+              <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+              <div class="validation"></div>
+            </div>
+            <div class="text-center"><button type="submit">Send Message</button></div>
+          </form>
+        </div>
+
+      </div>
+    </section><!-- #contact -->
+
+  </main>
+
+  <!--==========================
+    Footer
+  ============================-->
+  <footer id="footer">
+    <div class="container">
+      <div class="copyright">
+         <strong>College Management System</strong>
+      </div>
+      <div class="credits">
+       Designed by Taosif Siddiqui
+      </div>
+    </div>
+  </footer><!-- #footer -->
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'basenotice.html' %}
+{% load static %}
+{% block body %}
+
+    <div class="section-header">
+        <h2>{{ header }}</h2>
+    </div>
+
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for item in items %}
+        <tr>
+            <th>{{ item.title }}</th>
+            <th>{{ item.description }}</th>
+        {% endfor %}
+        </tr>
+        </tbody>
+    </table>
+
+{% endblock %}

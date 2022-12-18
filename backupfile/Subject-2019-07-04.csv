@@ -1,0 +1,7 @@
+id,course,name,code,description
+6,1,COMPUTER_NETWORK,2,Basic knowledge of computer network
+5,1,FUNDAMENTAL,1,Computer Basic Structure
+4,3,C#,22,Partially Object Oriented Language
+3,3,JAVA,21,Fully Object Oriented Language
+2,2,C++,12,Object Oriented Language
+1,2,C,11,Structured Oriented Language

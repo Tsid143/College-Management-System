@@ -1,0 +1,21 @@
+{% extends 'baselogin.html' %}
+
+{% block body %}
+    <center>
+    <h1 class="bg-primary">Edit Notice</h1>
+    <div class="center">
+    <form method="POST">
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="form-group row">
+                <label c for="id_{{ field.name }}" class="col-12 col-form-label">{{ field.label }}</label>
+                <div class="col-12">
+                    {{ field }}
+                </div>
+            </div>
+        {% endfor %}
+        <button class ='btn-primary' style="background-color:yellow; color:blue" type="submit">Edit</button>
+    </form>
+    </div>
+    </center>
+{% endblock %}

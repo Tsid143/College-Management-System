@@ -1,0 +1,27 @@
+{% extends 'basehod.html' %}
+{% load static %}
+{% block body %}
+    <section id="about" class="wow fadeInUp">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 about-img">
+            <img src="{% static 'img/hod.png' %}" alt="">
+          </div>
+
+          <div class="col-lg-6 content">
+            <h2>HOD {{ header }}</h2>
+
+            <ul>
+              <li><i class="ion-android-checkmark-circle"></i> Create and Manage Notice for Department, Faculty, Student.</li>
+              <li><i class="ion-android-checkmark-circle"></i> Make SMS Alert for Faculties and Students</li>
+              <li><i class="ion-android-checkmark-circle"></i> Create and Manage Time Table.</li>
+              <li><i class="ion-android-checkmark-circle"></i> Check Faculties and Students List.</li>
+            </ul>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+{% endblock %}

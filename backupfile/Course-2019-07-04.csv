@@ -1,0 +1,11 @@
+id,department,name,code,description
+10,4,MSC,402,Masters in Science
+9,4,BSC,401,Bachelors in Science
+8,3,MTECH,302,MTECH
+7,3,BTECH,301,BTECH
+6,2,MCOM,202,Masters in Commerce
+5,2,BCOM,201,Bachelors in Commerce
+4,1,PGDCA,104,Post Graduate Diploma  in Computer Application
+3,1,MCA,103,Masters in Computer Application
+2,1,BCA,102,Bachelors in Computer Application
+1,1,DCA,101,Diploma in Computer Application

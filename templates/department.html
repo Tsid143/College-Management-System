@@ -1,0 +1,40 @@
+{% extends 'baselogin.html' %}
+{% load static %}
+{% block header %}
+        <h1><a href="{% url 'index' %}" class="scrollto">{{ header }}</a></h1>
+{% endblock %}
+{% block body %}
+    <h2 style="color:teal">HOD</h2>
+    {% for i in hold %}
+        <div class="container-fluid " style="background-color:#1d2124">
+    <table>
+        <tr><th rowspan="5" ><img src= "{{ i.image.url }}" class="img-responsive" style="width: 150px; height: 150px; float: left; margin-right: 10px;" /><td></td>
+        <tr><td style="color:lightseagreen">Name:</td></tr>
+        <tr><th style="color:lavender">{{ i.name }}</th></tr>
+        <tr><td style="color:lightseagreen">Mobile:</td></tr>
+        <tr><th style="color:lavender">{{ i.mobile }}</th></tr></tr>
+    </table>
+        </div>
+    {% endfor %}
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">Code</th>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for item in items %}
+        <tr>
+            <th scope="row">{{ item.code }}</th>
+            <td>{{ item.name }}</td>
+            <td>{{ item.description }}</td>
+            <th></th>
+        {% endfor %}
+        </tr>
+        </tbody>
+    </table>
+
+{% endblock %}

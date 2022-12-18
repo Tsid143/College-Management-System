@@ -1,0 +1,27 @@
+{% extends 'basestudent.html' %}
+{% load static %}
+{% block body %}
+    <section id="about" class="wow fadeInUp">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 about-img">
+            <img src="{% static 'img/student.png' %}" alt="">
+          </div>
+
+          <div class="col-lg-6 content">
+            <h2>Student {{ header }}</h2>
+
+            <ul>
+              <li><i class="ion-android-checkmark-circle"></i> Check Notice of Department and Student.</li>
+              <li><i class="ion-android-checkmark-circle"></i> Check Time Table</li>
+              <li><i class="ion-android-checkmark-circle"></i> Check Faculty List.</li>
+              <li><i class="ion-android-checkmark-circle"></i> Check Assignment.</li>
+            </ul>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+{% endblock %}

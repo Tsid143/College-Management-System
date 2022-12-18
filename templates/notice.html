@@ -1,0 +1,42 @@
+{% extends 'basenotice.html' %}
+{% load static %}
+{% block body %}
+
+    <div class="section-header">
+        <h2>{{ header }}</h2>
+    </div>
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for item in items %}
+        <tr>
+            <th>{{ item.title }}</th>
+            <th>{{ item.description }}</th>
+             <th>
+                 {% if header|lower == 'departmentnotice' %}
+                     <a href="{% url 'edit_department' item.pk %}" class="btn btn-warning btn-sm" role="button" aria-pressed="true" > Edit</a>
+                     <a href="{% url 'deletedepartment' item.pk%}" class="btn btn-danger btn-sm" role="button" aria-pressed="true" > x</a>
+                 {% endif %}
+
+                 {% if header|lower == 'facultynotice' %}
+                     <a href="{% url 'edit_faculty' item.pk %}" class="btn btn-warning btn-sm" role="button" aria-pressed="true" > Edit</a>
+                     <a href="{% url 'deletefaculty' item.pk%}" class="btn btn-danger btn-sm" role="button" aria-pressed="true" > x</a>
+                 {% endif %}
+
+                 {% if header|lower == 'studentnotice' %}
+                     <a href="{% url 'edit_student' item.pk %}" class="btn btn-warning btn-sm" role="button" aria-pressed="true" > Edit</a>
+                     <a href="{% url 'deletestudent' item.pk%}" class="btn btn-danger btn-sm" role="button" aria-pressed="true" > x</a>
+                 {% endif %}
+             </th>
+        {% endfor %}
+        </tr>
+        </tbody>
+    </table>
+
+{% endblock %}

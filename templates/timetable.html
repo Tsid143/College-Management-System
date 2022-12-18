@@ -1,0 +1,32 @@
+{% extends 'basenotice.html' %}
+{% block body %}
+    <h2 style="color:teal">Upload</h2>
+    <div class="container-fluid col-sm-3 col-sm-offset-3 " style="background-color:#1d2124">
+      <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Upload</button>
+    </form>
+    </div>
+    <h2 style="color:teal">List</h2>
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">Department</th>
+            <th scope="col">Name</th>
+            <th scope="col">File</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for item in items %}
+        <tr>
+            <th>{{ item.department }}</th>
+            <th>{{ item.name }}</th>
+            <th><img src= "{{ item.image.url }}" class="img-responsive" style="width: 100px; height: 100px; float: left; margin-right: 10px;" /></th>
+            <th></th>
+        {% endfor %}
+        </tr>
+        </tbody>
+    </table>
+{% endblock %}

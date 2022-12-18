@@ -1,0 +1,17 @@
+{% extends 'baselogin.html' %}
+{% load static %}
+{% block header %}
+        <h1><a href="{% url 'index' %}" class="scrollto">{{ header }}</a></h1>
+{% endblock %}
+
+{% block body %}
+
+<center>
+        <h1 class="bg-info">HOD Login</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class ='btn-info col-md-2' type="submit">Login</button>
+    </form>
+</center>
+{% endblock %}
